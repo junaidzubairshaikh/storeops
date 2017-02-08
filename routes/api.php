@@ -14,11 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-//Route::get('/user', function (Request $request) {
-//     echo $request;
-//    return Response::json(['hello']);
-//    return $request->user();
-
+        return Auth::guard('api')->user();
         return response()->json(['name' => 'Abigail', 'state' => 'CA']);
 });
 
